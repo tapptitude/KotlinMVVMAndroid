@@ -1,6 +1,6 @@
 package com.tapptitude.kotlinmvvmandroid.di.builders
 
-import com.tapptitude.kotlinmvvmandroid.presentation.home.fragments.SampleFragment
+import com.tapptitude.kotlinmvvmandroid.presentation.home.fragment.SampleFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

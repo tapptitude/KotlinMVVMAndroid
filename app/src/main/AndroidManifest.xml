@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tapptitude.kotlinmvvmandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".utils.MVVMSampleApp"
         android:allowBackup="false"
@@ -11,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".presentation.home.activities.HomeActivity">
+        <activity android:name=".presentation.home.activitie.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

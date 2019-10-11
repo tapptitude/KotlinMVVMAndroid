@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.home.fragments
+package com.tapptitude.kotlinmvvmandroid.presentation.home.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
