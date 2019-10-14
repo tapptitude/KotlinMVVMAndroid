@@ -6,7 +6,6 @@ import com.tapptitude.kotlinmvvmandroid.di.builders.FragmentBuilder
 import com.tapptitude.kotlinmvvmandroid.di.modules.AppModule
 import com.tapptitude.kotlinmvvmandroid.di.modules.NetworkModule
 import com.tapptitude.kotlinmvvmandroid.di.modules.RepositoryModule
-import com.tapptitude.kotlinmvvmandroid.di.modules.ViewModelFactoryModule
 import com.tapptitude.kotlinmvvmandroid.utils.MVVMSampleApp
 import dagger.BindsInstance
 import dagger.Component
@@ -21,8 +20,7 @@ import javax.inject.Singleton
         NetworkModule::class,
         RepositoryModule::class,
         ActivityBuilder::class,
-        FragmentBuilder::class,
-        ViewModelFactoryModule::class
+        FragmentBuilder::class
     ]
 )
 interface AppComponent {

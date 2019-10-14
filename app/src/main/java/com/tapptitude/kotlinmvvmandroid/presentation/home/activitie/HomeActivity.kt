@@ -1,7 +1,9 @@
 package com.tapptitude.kotlinmvvmandroid.presentation.home.activitie
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.tapptitude.kotlinmvvmandroid.R
 import com.tapptitude.kotlinmvvmandroid.databinding.HomeActivityBinding
@@ -29,7 +31,14 @@ class HomeActivity : BaseActivity() {
         binding.lifecycleOwner = this
 
         viewModel.loadIpAddress()
-        setUpContent()
+
+        viewModel.toastData.observe(this, Observer { message ->
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        })
+
+        if (savedInstanceState == null) {
+            setUpContent()
+        }
     }
 
     private fun setUpContent() {

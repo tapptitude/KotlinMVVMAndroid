@@ -3,6 +3,8 @@ package com.tapptitude.kotlinmvvmandroid.presentation.common.viewmodel
 import android.app.Application
 import androidx.annotation.CallSuper
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -10,7 +12,13 @@ import io.reactivex.disposables.Disposable
 /**
  * @author Radu Dorin
  */
-open class BaseViewModel(application: Application) : AndroidViewModel(application) {
+open class BaseViewModel(application: Application) : AndroidViewModel(application), ToastViewModel {
+
+    /**
+     * Mediator live data is used in order to avoid toast events being passed on subscription. Only
+     * events that occur after the view is subscribed should be consumed.
+     */
+    override val toastData: MutableLiveData<String> = MediatorLiveData()
 
     private var disposables: CompositeDisposable? = null
 

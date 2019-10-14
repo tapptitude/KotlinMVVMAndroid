@@ -24,12 +24,15 @@ class HomeViewModelImpl(
     override fun loadIpAddress() {
         isLoading.set(true)
         repository.loadIpAddress()
-            .observeOn(schedulerProvider.mainThread()).doFinally {
+            .observeOn(schedulerProvider.mainThread())
+            .doFinally {
                 isLoading.set(false)
             }.subscribe(SelfDisposingObserver<IpAddress>({ ipAddress ->
                 val stringIp = ipAddress.ip
                 this.ipAddress.set(stringIp)
                 userSessionManager.saveIp(stringIp)
+            }, { error ->
+                toastData.postValue(error.message)
             }))
     }
 }

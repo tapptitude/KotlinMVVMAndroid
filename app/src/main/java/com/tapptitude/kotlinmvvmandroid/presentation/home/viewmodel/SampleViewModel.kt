@@ -1,6 +1,7 @@
 package com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel
 
 import androidx.databinding.ObservableField
+import com.tapptitude.kotlinmvvmandroid.data.network.models.DateTime
 import com.tapptitude.kotlinmvvmandroid.presentation.common.viewmodel.ToastViewModel
 
 /**
@@ -10,10 +11,10 @@ import com.tapptitude.kotlinmvvmandroid.presentation.common.viewmodel.ToastViewM
  *
  * @author Radu Dorin
  */
-interface HomeViewModel : ToastViewModel {
+interface SampleViewModel : ToastViewModel {
 
-    val ipAddress: ObservableField<String>
+    val dateTime: ObservableField<DateTime>
     val isLoading: ObservableField<Boolean>
 
-    fun loadIpAddress()
+    fun loadDateTime()
 }
