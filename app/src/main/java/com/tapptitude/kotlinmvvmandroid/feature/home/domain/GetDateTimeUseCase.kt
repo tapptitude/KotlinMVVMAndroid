@@ -2,7 +2,6 @@ package com.tapptitude.kotlinmvvmandroid.feature.home.domain
 
 import com.tapptitude.kotlinmvvmandroid.data.network.models.DateTime
 import com.tapptitude.kotlinmvvmandroid.data.persistence.datetime.DateTimeRepository
-import com.tapptitude.kotlinmvvmandroid.feature.common.domain.Result
 import com.tapptitude.kotlinmvvmandroid.providers.SchedulerProvider
 import io.reactivex.Observable
 import javax.inject.Inject
@@ -15,9 +14,15 @@ class GetDateTimeUseCase @Inject constructor(
     private val schedulerProvider: SchedulerProvider
 ) {
 
-    fun execute(): Observable<Result<DateTime>> = repository.loadDateTime()
+    sealed class ResultData {
+        object Loading : ResultData()
+        class Success(val data: DateTime) : ResultData()
+        class Failure(val throwable: Throwable) : ResultData()
+    }
+
+    fun execute(): Observable<ResultData> = repository.loadDateTime()
         .observeOn(schedulerProvider.mainThread())
-        .map { Result.Success(it) as Result<DateTime> }
-        .onErrorReturn { Result.Failure(it) }
-        .startWith(Result.Loading())
+        .map { ResultData.Success(it) as ResultData }
+        .onErrorReturn { ResultData.Failure(it) }
+        .startWith(ResultData.Loading)
 }

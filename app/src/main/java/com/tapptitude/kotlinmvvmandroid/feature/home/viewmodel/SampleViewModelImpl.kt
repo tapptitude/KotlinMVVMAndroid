@@ -3,9 +3,11 @@ package com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel
 import android.app.Application
 import androidx.databinding.ObservableField
 import com.tapptitude.kotlinmvvmandroid.data.network.models.DateTime
-import com.tapptitude.kotlinmvvmandroid.feature.common.domain.Result
 import com.tapptitude.kotlinmvvmandroid.feature.common.viewmodel.BaseViewModel
 import com.tapptitude.kotlinmvvmandroid.feature.home.domain.GetDateTimeUseCase
+import com.tapptitude.kotlinmvvmandroid.feature.home.domain.GetDateTimeUseCase.ResultData
+import com.tapptitude.kotlinmvvmandroid.feature.home.domain.GetDateTimeUseCase.ResultData.*
+
 
 /**
  * @author Radu Dorin
@@ -24,17 +26,17 @@ class SampleViewModelImpl(
         })
     }
 
-    private fun handleDateTimeResult(result: Result<DateTime>) {
+    private fun handleDateTimeResult(result: ResultData) {
         when (result) {
-            is Result.Success -> {
+            is Success -> {
                 dateTime.set(result.data)
                 isLoading.set(false)
             }
-            is Result.Failure -> {
+            is Failure -> {
                 toastData.postValue(result.throwable.message)
                 isLoading.set(false)
             }
-            is Result.Loading -> isLoading.set(true)
+            is Loading -> isLoading.set(true)
         }
     }
 }
