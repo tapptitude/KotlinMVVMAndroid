@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.home.fragment
+package com.tapptitude.kotlinmvvmandroid.feature.home.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.tapptitude.kotlinmvvmandroid.R
 import com.tapptitude.kotlinmvvmandroid.databinding.SampleFragmentBinding
-import com.tapptitude.kotlinmvvmandroid.presentation.common.fragments.BaseFragment
-import com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.SampleViewModel
-import com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.SampleViewModelFactory
-import com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.SampleViewModelImpl
+import com.tapptitude.kotlinmvvmandroid.feature.common.view.fragments.BaseFragment
+import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModel
+import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModelFactory
+import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModelImpl
 import javax.inject.Inject
 
 class SampleFragment : BaseFragment() {

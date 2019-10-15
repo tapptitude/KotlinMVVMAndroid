@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.common.fragments
+package com.tapptitude.kotlinmvvmandroid.feature.common.view.fragments
 
 import android.content.Context
 import androidx.fragment.app.Fragment

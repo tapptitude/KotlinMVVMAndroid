@@ -1,7 +1,7 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel
+package com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel
 
 import androidx.databinding.ObservableField
-import com.tapptitude.kotlinmvvmandroid.presentation.common.viewmodel.ToastViewModel
+import com.tapptitude.kotlinmvvmandroid.feature.common.viewmodel.ToastViewModel
 
 /**
  * The reasoning behind having an extra layer of abstraction between the XML/View and the view model

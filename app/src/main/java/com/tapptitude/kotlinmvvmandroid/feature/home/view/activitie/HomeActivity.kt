@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.home.activitie
+package com.tapptitude.kotlinmvvmandroid.feature.home.view.activitie
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,11 +7,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.tapptitude.kotlinmvvmandroid.R
 import com.tapptitude.kotlinmvvmandroid.databinding.HomeActivityBinding
-import com.tapptitude.kotlinmvvmandroid.presentation.common.activities.BaseActivity
-import com.tapptitude.kotlinmvvmandroid.presentation.home.fragment.SampleFragment
-import com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.HomeViewModel
-import com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.HomeViewModelFactory
-import com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.HomeViewModelImpl
+import com.tapptitude.kotlinmvvmandroid.feature.common.view.activities.BaseActivity
+import com.tapptitude.kotlinmvvmandroid.feature.home.view.fragment.SampleFragment
+import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.HomeViewModel
+import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.HomeViewModelFactory
+import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.HomeViewModelImpl
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity() {

@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.common.viewmodel
+package com.tapptitude.kotlinmvvmandroid.feature.common.viewmodel
 
 import androidx.lifecycle.LiveData
 

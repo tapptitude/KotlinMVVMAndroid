@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.common.activities
+package com.tapptitude.kotlinmvvmandroid.feature.common.view.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

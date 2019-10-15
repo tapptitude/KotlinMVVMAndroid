@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.common.viewmodel
+package com.tapptitude.kotlinmvvmandroid.feature.common.viewmodel
 
 import android.app.Application
 import androidx.annotation.CallSuper
@@ -40,8 +40,8 @@ open class BaseViewModel(application: Application) : AndroidViewModel(applicatio
      * @param D
      */
     protected open inner class SelfDisposingObserver<D>(
-        private inline val onSuccessAction: ((D) -> Unit)? = null,
-        private inline val onErrorAction: ((Throwable) -> Unit)? = null
+        private inline val onErrorAction: ((Throwable) -> Unit)? = null,
+        private inline val onSuccessAction: ((D) -> Unit)? = null
     ) : Observer<D> {
 
         /**

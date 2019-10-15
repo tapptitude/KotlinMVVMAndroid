@@ -1,11 +1,10 @@
-package com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel
+package com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.tapptitude.kotlinmvvmandroid.data.persistence.ip.IpRepository
+import com.tapptitude.kotlinmvvmandroid.feature.home.domain.GetIpAddressUseCase
 import com.tapptitude.kotlinmvvmandroid.preferance.UserSessionManager
-import com.tapptitude.kotlinmvvmandroid.providers.SchedulerProvider
 import javax.inject.Inject
 
 /**
@@ -14,8 +13,7 @@ import javax.inject.Inject
 @Suppress("UNCHECKED_CAST")
 class HomeViewModelFactory @Inject constructor(
     val application: Application,
-    private val repository: IpRepository,
-    private val schedulerProvider: SchedulerProvider,
+    private val ipAddressUseCase: GetIpAddressUseCase,
     private val userSessionManager: UserSessionManager
 ) : ViewModelProvider.AndroidViewModelFactory(application) {
 
@@ -23,8 +21,7 @@ class HomeViewModelFactory @Inject constructor(
         if (modelClass.isAssignableFrom(HomeViewModelImpl::class.java)) {
             return HomeViewModelImpl(
                 application,
-                repository,
-                schedulerProvider,
+                ipAddressUseCase,
                 userSessionManager
             ) as T
         }

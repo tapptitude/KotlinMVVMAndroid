@@ -5,11 +5,11 @@
 
         <variable
             name="viewModel"
-            type="com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.SampleViewModel" />
+            type="com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModel" />
 
         <import type="android.view.View" />
 
-        <import type="com.tapptitude.kotlinmvvmandroid.presentation.home.viewmodel.SampleViewModel" />
+        <import type="com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModel" />
     </data>
 
     <FrameLayout
