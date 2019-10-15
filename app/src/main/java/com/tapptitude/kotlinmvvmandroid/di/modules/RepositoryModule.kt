@@ -17,8 +17,8 @@ class RepositoryModule {
     @Provides
     @Singleton
     internal fun provideDateTimeRepository(
-            dateTimeApi: DateTimeApi,
-            schedulerProvider: SchedulerProvider
+        dateTimeApi: DateTimeApi,
+        schedulerProvider: SchedulerProvider
     ): DateTimeRepository {
         return DateTimeNetworkRepository(dateTimeApi, schedulerProvider)
     }
@@ -26,8 +26,8 @@ class RepositoryModule {
     @Provides
     @Singleton
     internal fun provideIpRepository(
-            ipApi: IpApi,
-            schedulerProvider: SchedulerProvider
+        ipApi: IpApi,
+        schedulerProvider: SchedulerProvider
     ): IpRepository {
         return IpNetworkRepository(ipApi, schedulerProvider)
     }

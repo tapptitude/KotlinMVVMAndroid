@@ -25,27 +25,27 @@ class NetworkModule {
     @Singleton
     fun provideDateTimeApi(retrofitBuilder: Retrofit.Builder): DateTimeApi {
         return retrofitBuilder
-                .baseUrl(getDateTimeEndpoint())
-                .build()
-                .create(DateTimeApi::class.java)
+            .baseUrl(getDateTimeEndpoint())
+            .build()
+            .create(DateTimeApi::class.java)
     }
 
     @Provides
     @Singleton
     fun provideIpApi(retrofitBuilder: Retrofit.Builder): IpApi {
         return retrofitBuilder
-                .baseUrl(getIpEndpoint())
-                .build()
-                .create(IpApi::class.java)
+            .baseUrl(getIpEndpoint())
+            .build()
+            .create(IpApi::class.java)
     }
 
     @Provides
     @Singleton
     fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit.Builder {
         return Retrofit.Builder()
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     }
 
     @Provides

@@ -11,8 +11,8 @@ private const val SESSION_TOKEN_KEY = "SESSION_TOKEN_KEY"
 private const val IP_INFO_KEY = "IP_INFO_KEY"
 
 class UserSessionManager @Inject constructor(
-        private val gson: Gson,
-        private val userPreference: SharedPreferences
+    private val gson: Gson,
+    private val userPreference: SharedPreferences
 ) {
 
     fun getUser(): User? {
@@ -29,8 +29,8 @@ class UserSessionManager @Inject constructor(
         val stringUserData = gson.toJson(user)
 
         userPreference.edit()
-                .putString(USER_DATA_KEY, stringUserData)
-                .apply()
+            .putString(USER_DATA_KEY, stringUserData)
+            .apply()
     }
 
     fun saveIp(ip: String) {
@@ -51,7 +51,7 @@ class UserSessionManager @Inject constructor(
 
     fun clearSession() {
         userPreference.edit()
-                .clear()
-                .apply()
+            .clear()
+            .apply()
     }
 }

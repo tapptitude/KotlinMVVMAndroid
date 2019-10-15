@@ -28,10 +28,11 @@ class AppModule {
     @Provides
     @Singleton
     fun provideUserSessionManager(
-            context: Context,
-            gson: Gson
+        context: Context,
+        gson: Gson
     ): UserSessionManager {
-        val sharedPrefs = context.applicationContext.getSharedPreferences(USER_PREFS, Context.MODE_PRIVATE)
+        val sharedPrefs =
+            context.applicationContext.getSharedPreferences(USER_PREFS, Context.MODE_PRIVATE)
         return UserSessionManager(gson, sharedPrefs)
     }
 

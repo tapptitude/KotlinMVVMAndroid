@@ -8,5 +8,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
-    abstract fun bindMainActivity(): HomeActivity
+    abstract fun bindHomeActivity(): HomeActivity
 }

@@ -22,8 +22,8 @@ class MVVMSampleApp : Application(), HasActivityInjector {
 
     private fun setUpDependencyInjection() {
         DaggerAppComponent.builder()
-                .application(this)
-                .build()
-                .inject(this)
+            .application(this)
+            .build()
+            .inject(this)
     }
 }

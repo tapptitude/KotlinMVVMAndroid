@@ -8,5 +8,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentBuilder {
 
     @ContributesAndroidInjector
-    abstract fun bindQuestionFragment(): SampleFragment
+    abstract fun bindSampleFragment(): SampleFragment
 }
