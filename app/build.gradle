@@ -46,7 +46,7 @@ ext {
     retrofitVersion = '2.6.2'
     daggerVersion = '2.16'
     daggerSupportVersion = '2.16'
-    rxAndroidVersion = '2.0.2'
+    rxAndroidVersion = '2.1.1'
     rxBindingKotlinVersion = '2.2.0'
     loggingInterceptorVersion = '4.2.2'
     glideVersion = '4.10.0'
@@ -100,7 +100,6 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockitoInlineVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
-    testImplementation "org.robolectric:shadows-support-v4:$robolectricShadowsSupportVersion"
 
     androidTestImplementation "androidx.test.ext:junit:$androidxKUnitVersion"
     androidTestImplementation "com.android.support.test:runner:$androidSupportTestVersion"
