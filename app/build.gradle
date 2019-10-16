@@ -100,6 +100,7 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockitoInlineVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "android.arch.core:core-testing:$androidxKUnitVersion"
 
     androidTestImplementation "androidx.test.ext:junit:$androidxKUnitVersion"
     androidTestImplementation "com.android.support.test:runner:$androidSupportTestVersion"

@@ -1,4 +1,4 @@
-package com.tapptitude.kotlinmvvmandroid
+package com.tapptitude.kotlinmvvmandroid.usecase
 
 import com.nhaarman.mockito_kotlin.whenever
 import com.tapptitude.kotlinmvvmandroid.data.network.DateTimeApi
