@@ -1,9 +1,9 @@
 package com.tapptitude.kotlinmvvmandroid.data.persistence.datetime
 
 import com.tapptitude.kotlinmvvmandroid.data.network.models.DateTime
-import io.reactivex.Observable
+import io.reactivex.Single
 
 interface DateTimeRepository {
 
-    fun loadDateTime(): Observable<DateTime>
+    fun loadDateTime(): Single<DateTime>
 }

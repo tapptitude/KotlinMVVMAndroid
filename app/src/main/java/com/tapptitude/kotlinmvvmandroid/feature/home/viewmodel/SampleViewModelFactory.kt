@@ -17,10 +17,7 @@ class SampleViewModelFactory @Inject constructor(
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SampleViewModelImpl::class.java)) {
-            return SampleViewModelImpl(
-                application,
-                dateTimeUseCase
-            ) as T
+            return SampleViewModelImpl(application, dateTimeUseCase) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

@@ -4,6 +4,7 @@ import com.tapptitude.kotlinmvvmandroid.data.network.models.DateTime
 import com.tapptitude.kotlinmvvmandroid.data.persistence.datetime.DateTimeRepository
 import com.tapptitude.kotlinmvvmandroid.providers.SchedulerProvider
 import io.reactivex.Observable
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
@@ -22,6 +23,8 @@ class GetDateTimeUseCase @Inject constructor(
 
     fun execute(): Observable<ResultData> = repository.loadDateTime()
         .observeOn(schedulerProvider.mainThread())
+        .toObservable()
+        .delay(600, TimeUnit.MILLISECONDS)
         .map { ResultData.Success(it) as ResultData }
         .onErrorReturn { ResultData.Failure(it) }
         .startWith(ResultData.Loading)

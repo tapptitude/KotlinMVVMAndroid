@@ -9,7 +9,6 @@ import com.tapptitude.kotlinmvvmandroid.R
 import com.tapptitude.kotlinmvvmandroid.databinding.HomeActivityBinding
 import com.tapptitude.kotlinmvvmandroid.feature.common.view.activities.BaseActivity
 import com.tapptitude.kotlinmvvmandroid.feature.home.view.fragment.SampleFragment
-import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.HomeViewModel
 import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.HomeViewModelFactory
 import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.HomeViewModelImpl
 import javax.inject.Inject
@@ -19,7 +18,7 @@ class HomeActivity : BaseActivity() {
     @Inject
     lateinit var viewModelFactory: HomeViewModelFactory
 
-    lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: HomeViewModelImpl
     private lateinit var binding: HomeActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

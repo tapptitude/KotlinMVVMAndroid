@@ -10,6 +10,4 @@ interface HomeViewModel : ToastViewModel {
 
     val ipAddress: ObservableField<String>
     val isLoading: ObservableField<Boolean>
-
-    fun loadIpAddress()
 }

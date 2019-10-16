@@ -11,6 +11,4 @@ interface SampleViewModel : ToastViewModel {
 
     val dateTime: ObservableField<DateTime>
     val isLoading: ObservableField<Boolean>
-
-    fun loadDateTime()
 }

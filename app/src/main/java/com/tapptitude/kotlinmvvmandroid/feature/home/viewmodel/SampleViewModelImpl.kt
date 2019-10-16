@@ -20,23 +20,18 @@ class SampleViewModelImpl(
     override val dateTime = ObservableField<DateTime>()
     override val isLoading = ObservableField<Boolean>()
 
-    override fun loadDateTime() {
-        dateTimeUseCase.execute().subscribe(SelfDisposingObserver { result ->
-            handleDateTimeResult(result)
-        })
+    fun loadDateTime() {
+        dateTimeUseCase.execute()
+            .subscribe(SelfDisposingObserver { result ->
+                handleDateTimeResult(result)
+            })
     }
 
     private fun handleDateTimeResult(result: ResultData) {
+        isLoading.set(result == Loading)
         when (result) {
-            is Success -> {
-                dateTime.set(result.data)
-                isLoading.set(false)
-            }
-            is Failure -> {
-                toastData.postValue(result.throwable.message)
-                isLoading.set(false)
-            }
-            is Loading -> isLoading.set(true)
+            is Success -> dateTime.set(result.data)
+            is Failure -> toastData.postValue(result.throwable.message)
         }
     }
 }

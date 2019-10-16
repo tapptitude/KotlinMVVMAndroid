@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProviders
 import com.tapptitude.kotlinmvvmandroid.R
 import com.tapptitude.kotlinmvvmandroid.databinding.SampleFragmentBinding
 import com.tapptitude.kotlinmvvmandroid.feature.common.view.fragments.BaseFragment
-import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModel
 import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModelFactory
 import com.tapptitude.kotlinmvvmandroid.feature.home.viewmodel.SampleViewModelImpl
 import javax.inject.Inject
@@ -21,7 +20,7 @@ class SampleFragment : BaseFragment() {
     @Inject
     lateinit var viewModelFactory: SampleViewModelFactory
 
-    lateinit var viewModel: SampleViewModel
+    private lateinit var viewModel: SampleViewModelImpl
     private lateinit var binding: SampleFragmentBinding
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
